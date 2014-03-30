@@ -16,12 +16,12 @@ if (window.webkitSpeechRecognition) {
     })()).join(''));
   };
   $('#startStopButton').on('click', function() {
-    if (this.innerText === 'Start') {
-      this.innerText = 'Stop';
+    if (this.value === 'Start') {
+      this.value = 'Stop';
       recognition.lang = 'en-AU';
       return recognition.start();
     } else {
-      this.innerText = 'Start';
+      this.value = 'Start';
       return recognition.stop();
     }
   });
