@@ -1,10 +1,11 @@
 from flask import Flask, url_for, render_template, jsonify, request
 from pymongo import MongoClient
 from filter import *
+from sendgrid import SendGridClient, Mail
+# from settings import *
 
 app = Flask(__name__)
 app.debug = True
-
 
 @app.route('/', methods = ['GET','POST'])
 def hello():
