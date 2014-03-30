@@ -7,3 +7,16 @@
 .modal-body{
 	padding: 0;
 }
+
+.content {
+	text-align: center;
+}
+
+body{
+	background-color: #fcfcf1;
+}
+
+.form-control{
+	max-width: 650px;
+	margin: auto;
+}
