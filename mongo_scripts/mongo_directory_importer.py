@@ -8,15 +8,13 @@ client = MongoClient()
 db = client['text2hand']
 video_match = db['video_match']
 
-
 path = os.path.abspath(os.path.dirname(__file__))
-videos_import_path = path + '/../videos'
+video_list_path = path + '/../videos'
 
-video_path = dirname(path) + '/videos/'
-print video_path
-
-for f in listdir(videos_import_path):
+for f in listdir(video_list_path):
 	entry_word = f.replace(".mp4", "")
-	entry_video_url = video_path + f
-	entry = {"word": entry_word, "video_url": entry_video_url}
+	entry_video_url = f
+	entry = {"word": entry_word, "video_url": '/videos/'+entry_video_url}
 	video_match.insert(entry)
+
+video_match.ensure_index('word',1)
