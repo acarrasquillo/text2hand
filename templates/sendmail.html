@@ -10,7 +10,6 @@
 	<link rel = 'stylesheet' href= "{{url_for('static', filename='css/bootstrap.min.css')}}"/>
 	<!-- Custom styles for this template -->
 	<link rel = 'stylesheet' href= "{{url_for('static', filename='css/dashboard.css')}}"/>
-	<link rel = 'stylesheet' href= "{{url_for('static', filename='css/main.css')}}"/>
 	<!-- Just for debugging purposes. Don't actually copy this line! -->
 	<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -43,44 +42,20 @@
 		<div class="row">
 			<div class="col-sm-3 col-md-2 sidebar">
 				<ul class="nav nav-sidebar">
-					<li><a href="#">Videos</a></li>
+					<li><a href="#"></a></li>
 				</ul>
 			</div>
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-				<p><strong>English -> ASL:</strong></p>
-				<form name="input" method="POST" action="/sendmail">
-					<input type="text" name="to" class="form-control" placeholder="TO"> <br>
-					<input type="text" name="subject" placeholder="SUBJECT" class="form-control"><br>
-					<input type="text" name="filename" placehorlder="video" class="form-control"><br>
-					<input type="submit" value="SEND" class="btn btn-default" >
-				</form>
-				<p><br><button id="startStopButton" class="btn btn-default">Start</button><br></p>
-				<p>
-					BODY:
-					<textarea id="transcript" style="width: 100%; height: 100px" ></textarea>
+				<p><strong>Mail sended to:</strong> {{ send_to }}<br>
+					 Video Link: <a href="{{url}}">Dropbox</a>
 				</p>
-				<button id="translate" class="btn btn-default" data-toggle="modal" data-target="#myModal">Translate</button>
-				<p id="prueba">{{to }} : {{subject}}</p>
+				
+				
 
 
 			</div>
 		</div>
-
-	<!-- Modal -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
-	  <div class="modal-dialog">
-	    <div class="modal-content">
-	     <div class="modal-body">
-	        <video  width="100%" height="100%"controls autoplay>
-			  <source src="{{url_for('static', filename='videos/1396164424.32.mp4')}}" type="video/mp4">
-			</video>	      
-		</div>
-	    </div>
-	  </div>
-	</div>
-
-
 		<!-- Bootstrap core JavaScript
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
@@ -89,6 +64,5 @@
 		<script src="{{url_for('static', filename='js/docs.min.js')}}"></script>
 		<script src="{{url_for('static', filename='js/coffee-script-1.4.0.min.js')}}"></script>
 		<script src="{{url_for('static', filename='js/recognition.js')}}"></script>
-		<script src="{{url_for('static', filename='js/main.js')}}"></script>
 	</body>
 </html>
