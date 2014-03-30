@@ -6,3 +6,5 @@ include
 
 # Mac OS X custom attribute files
 .DS_Store
+
+settings.py
