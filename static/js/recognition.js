@@ -38,6 +38,8 @@ $("#trans").click(function(e){
       })
       .done(function( msg ) {
           $("#video_container").html('<video controls autoplay><source src="./static/' + msg + '"</video>');
+          $("#videoModal").attr('dialog', 'open');
       });
+
 });
 

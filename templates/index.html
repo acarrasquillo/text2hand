@@ -61,10 +61,9 @@
 					<textarea id="transcript" class="form-control"style="height: 100px" ></textarea>
 				</p>
 				<button id="trans" type="button" class="btn btn-success">Translate</button>
-				<button id="translate" type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Show Me The Hands!</button>
+				<button id="translate" type="button" class="btn btn-success" data-toggle="modal" data-target="#videoModal">Show Me The Hands!</button>
 				
-
-				<p><strong>English -> ASL:</strong></p>
+				<br><br>
 				<form name="input" method="POST" action="/sendmail">
 					<input type="text" name="to" class="form-control" placeholder="TO"> <br>
 					<input type="text" name="subject" placeholder="SUBJECT" class="form-control"><br>
@@ -75,7 +74,7 @@
 		</div>
 
 	<!-- Modal -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+	<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
 	  <div class="modal-dialog">
 	    <div class="modal-content">
 	     <div class="modal-body" id="video_container">
