@@ -5,10 +5,10 @@ from sendgrid import SendGridClient, Mail
 import cloud_elements
 import json
 from settings import *
+import video_merger
 
 app = Flask(__name__)
 app.debug = True
-
 
 
 @app.route('/', methods = ['GET'])
@@ -20,15 +20,13 @@ def hello():
 def translate(): 
 	body = request.form['body']
 	clean = getWords(getSentences(body))
-	text = ""
+	text = []
 	for k, v in clean.items():
 		for word in v:
-			text = text + "|" + word + ".mp4"
+			text.append("./videos/"+ word + ".mp4")
+	video_name = video_merger.makeVideo(text)
 
-
-
-
-	return render_template("test.html", body=text )
+	return render_template("test.html", body=video_name )
 
 @app.route('/sendmail', methods = ['POST'])
 def sendmail():
@@ -45,7 +43,7 @@ def sendmail():
 	  'tag': "text2hand"
 	}
 	# file path in dropbox
-	dropbox_file = "videos/%s" % filename
+	dropbox_file = filename
 	files = [dropbox_file]
 	# upload file on dropbox
 	res = client.invoke(httpMethod='post', providerName='document', elementToken = "3faa91bf8cf909dbf2f4123af86d51f0", apiMethodName='uploadFiles', payload=upload, files=files)

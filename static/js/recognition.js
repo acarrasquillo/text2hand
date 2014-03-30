@@ -29,6 +29,17 @@ if (window.webkitSpeechRecognition) {
   alert('Cannot access the speech recognition API.  Are you using Chrome 25+ ?');
 }
 
-    $('#translate').on('click', function() {
-        $('#prueba').text($("#transcript").val());
-    });
+$("#trans").click(function(e){
+      text = $("#transcript").val();
+      $.ajax({
+          type: "POST",
+          url: "/trans",
+          data: { body: text }
+      })
+      .done(function( msg ) {
+          $("#video_container").html('<video controls autoplay><source src="./static/' + msg + '"</video>');
+          $("#video_share").attr('value', 'static/'+ msg);
+      });
+
+});
+
