@@ -54,22 +54,13 @@
 			<img src="{{url_for('static', filename='images/text2hands_logo.png')}}" class='logo'alt="some_text">
 			<div class="col-md-12">
 
-				<p><br><button id="startStopButton" class="btn btn-default">Start</button><br></p>
 				<p>
-					<input type="image" id="startStopButton"  src="{{url_for('static', filename='images/microphone.png')}}" name="image" width="32" height="32">
+					<input type="image" id="startStopButton"  src="{{url_for('static', filename='images/microphone.png')}}" name="image" width="32" height="32" value="Start">
 				
 					<textarea id="transcript" class="form-control"style="height: 100px" ></textarea>
 				</p>
 				<button id="trans" type="button" class="btn btn-success">Translate</button>
 				<button id="translate" type="button" class="btn btn-success" data-toggle="modal" data-target="#videoModal">Show Me The Hands!</button>
-				
-				<br><br>
-				<form name="input" method="POST" action="/sendmail">
-					<input type="text" name="to" class="form-control" placeholder="TO"> <br>
-					<input type="text" name="subject" placeholder="SUBJECT" class="form-control"><br>
-					<input type="hidden" name="filename" placehorlder="video" class="form-control"><br>
-					<input type="submit" value="SEND" class="btn btn-default" >
-				</form>
 			</div>
 		</div>
 
@@ -82,6 +73,36 @@
 			  <source id="video_container" src="{{url_for('static', filename='videos/1396164424.32.mp4')}}" type="video/mp4">
 			</video>	      
 		</div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="row content">
+		<br>
+		<!-- Button trigger modal -->
+		<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#share_modal">
+		  Share
+		</button>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="share_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title" id="myModalLabel">Share your handy message!</h4>
+	      </div>
+	      <form name="input" method="POST" action="/sendmail">
+	      <div class="modal-body">
+				<input type="text" name="to" class="form-control" placeholder="TO"> <br>
+				<input type="text" name="subject" placeholder="SUBJECT" class="form-control"><br>
+				<input type="hidden" name="filename" placehorlder="video" class="form-control" id="video_share" value="{{url_for('static', filename='./1396164424.32.mp4')}}"><br>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	        <input type="submit" value="SEND" class="btn btn-success" >
+	      </div>
+	      </form>
 	    </div>
 	  </div>
 	</div>

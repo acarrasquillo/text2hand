@@ -43,7 +43,7 @@ def sendmail():
 	  'tag': "text2hand"
 	}
 	# file path in dropbox
-	dropbox_file = "videos/%s" % filename
+	dropbox_file = filename
 	files = [dropbox_file]
 	# upload file on dropbox
 	res = client.invoke(httpMethod='post', providerName='document', elementToken = "3faa91bf8cf909dbf2f4123af86d51f0", apiMethodName='uploadFiles', payload=upload, files=files)
