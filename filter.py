@@ -4,7 +4,8 @@ ARTICLES_LIST = [
 	'a',
 	'an',
 	'the',
-	'will'
+	'will',
+	'it',
 	]
 
 TIME_LIST = [

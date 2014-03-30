@@ -29,6 +29,6 @@ if (window.webkitSpeechRecognition) {
   alert('Cannot access the speech recognition API.  Are you using Chrome 25+ ?');
 }
 
-$('#translate').on('click', function() {
-  return $('#prueba').text($("#transcript").val());
-});
+    $('#translate').on('click', function() {
+        $('#prueba').text($("#transcript").val());
+    });

@@ -1,5 +1,6 @@
 from flask import Flask, url_for, render_template, jsonify, request
 from pymongo import MongoClient
+from filter import *
 
 app = Flask(__name__)
 app.debug = True
@@ -14,6 +15,19 @@ def hello():
 	else :
 		return render_template('index.html')
 
+@app.route('/trans', methods = ['POST','GET'])
+def translate(): 
+	body = request.form['body']
+	clean = getWords(getSentences(body))
+	text = ""
+	for k, v in clean.items():
+		for word in v:
+			text = text + "|" + word + ".mp4"
+
+
+
+
+	return render_template("test.html", body=text )
 
 if __name__ == '__main__':
 	app.run()
