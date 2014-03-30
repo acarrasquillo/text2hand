@@ -1,7 +1,7 @@
 import time
 import os
 
-file_list=["../videos/tomorrow.mp4",'../videos/i.mp4','../videos/eat.mp4','../videos/pizza.mp4']
+file_list=["../videos/tomorrow.mp4",'../videos/i.mp4','../videos/eat.mp4','../videos/bacon.mp4']
 
 def makeVideo(file_list):
 
