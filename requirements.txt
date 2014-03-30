@@ -2,8 +2,10 @@ Flask==0.10.1
 Jinja2==2.7.2
 MarkupSafe==0.19
 Werkzeug==0.9.4
+cloud-elements==0.2.1
 itsdangerous==0.24
 pymongo==2.6.3
+requests==2.2.1
 sendgrid==0.3.7
 smtpapi==0.1.1
 unittest2==0.5.1
