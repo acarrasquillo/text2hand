@@ -43,31 +43,30 @@
 
 	<div class="container-fluid">
 
-		<div class="row">
+		<div class="row content">
 		<!-- 	<div class="col-sm-3 col-md-2 sidebar">
 				<ul class="nav nav-sidebar">
 					<li><a href="#">Videos</a></li>
 				</ul>
 			</div> -->
-			<img src="{{url_for('static', filename='images/text2hands_logo.png')}}" alt="some_text">
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+			<img src="{{url_for('static', filename='images/text2hands_logo.png')}}" class='logo'alt="some_text">
+			<div class="col-md-12">
+
+				<p><br><button id="startStopButton" class="btn btn-default">Start</button><br></p>
+				<p>
+					<input type="image" id="startStopButton"  src="{{url_for('static', filename='images/microphone.png')}}" name="image" width="32" height="32">
+				
+					<textarea id="transcript" class="form-control"style="height: 100px" ></textarea>
+				</p>
+				<button id="translate" type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">show me the hands!</button>
 
 				<p><strong>English -> ASL:</strong></p>
 				<form name="input" method="POST" action="/sendmail">
 					<input type="text" name="to" class="form-control" placeholder="TO"> <br>
 					<input type="text" name="subject" placeholder="SUBJECT" class="form-control"><br>
-					<input type="text" name="filename" placehorlder="video" class="form-control"><br>
+					<input type="hidden" name="filename" placehorlder="video" class="form-control"><br>
 					<input type="submit" value="SEND" class="btn btn-default" >
 				</form>
-				<p><br><button id="startStopButton" class="btn btn-default">Start</button><br></p>
-				<p>
-					BODY:
-					<textarea id="transcript" style="width: 100%; height: 100px" ></textarea>
-				</p>
-				<button id="translate" class="btn btn-default" data-toggle="modal" data-target="#myModal">Translate</button>
-				<p id="prueba">{{to }} : {{subject}}</p>
-
-
 			</div>
 		</div>
 
