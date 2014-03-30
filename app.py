@@ -1,11 +1,9 @@
 from flask import Flask, url_for, render_template, jsonify, request
 from pymongo import MongoClient
-from flaskext.coffee2js import coffee2js
 
 app = Flask(__name__)
 app.debug = True
 
-coffee2js(app, js_folder='js', coffee_folder='src/coffee')
 
 @app.route('/', methods = ['GET','POST'])
 def hello():
