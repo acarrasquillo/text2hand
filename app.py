@@ -65,7 +65,7 @@ def sendmail():
 	except Exception, e:
 		raise e
 		
-	return render_template('sendmail.html', send_to = send_to, subject = subject, filename = filename, res = res)
+	return render_template('sendmail.html', send_to = send_to, subject = subject, filename = filename, url = url)
 
 if __name__ == '__main__':
 	app.run()
